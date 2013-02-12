@@ -6,8 +6,8 @@
     <ProjectGuid>{719CB21E-8618-422D-854B-D0F95E74D43E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RxUI_QCon.Tests</RootNamespace>
-    <AssemblyName>RxUI_QCon.Tests</AssemblyName>
+    <RootNamespace>SerialCommunication.Tests</RootNamespace>
+    <AssemblyName>SerialCommunication.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -98,7 +98,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RxUI_QCon.csproj">
+    <ProjectReference Include="..\SerialCommunication.csproj">
       <Project>{FEBB149B-E068-4DD8-A418-1EBDD7A4E788}</Project>
       <Name>RxUI_QCon</Name>
     </ProjectReference>

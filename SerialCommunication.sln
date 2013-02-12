@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RxUI_QCon", "RxUI_QCon.csproj", "{FEBB149B-E068-4DD8-A418-1EBDD7A4E788}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialCommunication", "SerialCommunication.csproj", "{FEBB149B-E068-4DD8-A418-1EBDD7A4E788}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RxUI_QCon.Tests", "RxUI_QCon.Tests\RxUI_QCon.Tests.csproj", "{719CB21E-8618-422D-854B-D0F95E74D43E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialCommunication.Tests", "SerialCommunication.Tests\SerialCommunication.Tests.csproj", "{719CB21E-8618-422D-854B-D0F95E74D43E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

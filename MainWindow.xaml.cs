@@ -17,7 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO.Ports;
 
-namespace RxUI_QCon {
+namespace SerialCommunication {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -38,12 +38,10 @@ namespace RxUI_QCon {
             this.OneWayBind(ViewModel, x => x.FinalColor, x => x.FinalColor.Background);
 
             // And output some stuff to the serial port
-            this.WhenAny(x => x.ViewModel.FinalColor, x => x.Value).Where(x => x != null).Throttle(TimeSpan.FromSeconds(0.3), RxApp.DeferredScheduler).Subscribe(x => {
-                if (_serialPort.IsOpen) {
-                    _serialPort.WriteLine(String.Format("33,{0},{1},{2}", x.Color.R, x.Color.G, x.Color.B));
-                }
-            });
-
+            this.WhenAny(x => x.ViewModel.FinalColor, x => x.Value)
+                .Where(x => x != null)
+                .Throttle(TimeSpan.FromSeconds(0.3), RxApp.DeferredScheduler)
+                .Subscribe(x => _serialPort.WriteLine(String.Format("33,{0},{1},{2}", x.Color.R, x.Color.G, x.Color.B)));
         }
 
         public MainWindowViewModel ViewModel {

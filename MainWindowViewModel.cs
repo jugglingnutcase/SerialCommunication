@@ -13,8 +13,7 @@ using System.Windows.Media.Imaging;
 using ReactiveUI;
 using ReactiveUI.Xaml;
 
-namespace RxUI_QCon
-{
+namespace SerialCommunication {
     public class MainWindowViewModel : ReactiveObject {
         int _Red;
         public int Red {
@@ -47,7 +46,7 @@ namespace RxUI_QCon
             whenAnyColorChanges
                 .Where(x => x != null)
                 .Select(x => new SolidColorBrush(x.Value))
-                .Throttle(TimeSpan.FromSeconds(0.7), RxApp.DeferredScheduler)
+                .Throttle(TimeSpan.FromSeconds(0.3), RxApp.DeferredScheduler)
                 .ToProperty(this, x => x.FinalColor);
         }
 
