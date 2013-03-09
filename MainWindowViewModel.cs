@@ -33,10 +33,19 @@ namespace SerialCommunication {
             set { this.RaiseAndSetIfChanged(value); }
         }
 
+        String _SaveText;
+        public String SaveText
+        {
+            get { return _SaveText; }
+            set { this.RaiseAndSetIfChanged(value); }
+        }
+
         ObservableAsPropertyHelper<SolidColorBrush> _FinalColor;
         public SolidColorBrush FinalColor {
             get { return _FinalColor.Value; }
         }
+
+        public ReactiveCommand SaveColor;
 
         public MainWindowViewModel() {
             var whenAnyColorChanges = this.WhenAny(x => x.Red, x => x.Green, x => x.Blue,
@@ -48,6 +57,8 @@ namespace SerialCommunication {
                 .Select(x => new SolidColorBrush(x.Value))
                 .Throttle(TimeSpan.FromSeconds(0.3), RxApp.DeferredScheduler)
                 .ToProperty(this, x => x.FinalColor);
+
+            SaveColor = new ReactiveCommand();
         }
 
         Color? intsToColor(Tuple<int, int, int> colorsAsInts) {
