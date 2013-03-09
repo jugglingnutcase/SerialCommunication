@@ -42,9 +42,16 @@ namespace SerialCommunication
                 _serialPort = new SerialPort(App.ComPort, 9600);
                 _serialPort.Open();
 
-                this.Bind(ViewModel, x => x.Red);
-                this.Bind(ViewModel, x => x.Green);
-                this.Bind(ViewModel, x => x.Blue);
+                // Set the items from 0 to 255
+                var numbers = Enumerable.Range(0, 255);
+                this.Red.ItemsSource = numbers;
+                this.Green.ItemsSource = numbers;
+                this.Blue.ItemsSource = numbers;
+
+                // Bind the colors on the ViewModel to the SelectedIndex
+                this.Bind(ViewModel, x => x.Red, x => x.Red.SelectedIndex);
+                this.Bind(ViewModel, x => x.Green, x => x.Green.SelectedIndex);
+                this.Bind(ViewModel, x => x.Blue, x => x.Blue.SelectedIndex);
 
                 this.Bind(ViewModel, x => x.SaveText, x => x.Save.Content);
 

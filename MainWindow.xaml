@@ -19,9 +19,9 @@
         <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Green:" />
         <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Blue:" />
 
-        <TextBox x:Name="Red" Grid.Row="0" Grid.Column="1" MinWidth="50" Margin="8" VerticalAlignment="Center" Text="0" />
-        <TextBox x:Name="Green" Grid.Row="1" Grid.Column="1" MinWidth="50" Margin="8" VerticalAlignment="Center" Text="0" />
-        <TextBox x:Name="Blue" Grid.Row="2" Grid.Column="1" MinWidth="50" Margin="8" VerticalAlignment="Center" Text="0" />
+        <ComboBox x:Name="Red" Grid.Row="0" Grid.Column="1" MinWidth="50" Margin="8" VerticalAlignment="Center" Text="0" Focusable="True" />
+        <ComboBox x:Name="Green" Grid.Row="1" Grid.Column="1" MinWidth="50" Margin="8" VerticalAlignment="Center" Text="0" />
+        <ComboBox x:Name="Blue" Grid.Row="2" Grid.Column="1" MinWidth="50" Margin="8" VerticalAlignment="Center" Text="0" />
 
         <Border x:Name="FinalColor" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" Width="128" Height="128" HorizontalAlignment="Right" BorderBrush="#FF474747" BorderThickness="4" CornerRadius="2" 
                 />
