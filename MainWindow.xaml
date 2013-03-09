@@ -27,5 +27,8 @@
                 />
         
         <Button x:Name="Save" Grid.Column="2" Margin="10,0,296,0" Grid.Row="2" />
+        <Button x:Name="SaveAll" Grid.Column="2" Margin="110,0,196,0" Grid.Row="2">
+            Apply to all
+        </Button>
     </Grid>
 </Window>

@@ -45,7 +45,8 @@ namespace SerialCommunication {
             get { return _FinalColor.Value; }
         }
 
-        public ReactiveCommand SaveColor;
+        public ReactiveCommand SaveToLED;
+        public ReactiveCommand SaveAll;
 
         public MainWindowViewModel() {
             var whenAnyColorChanges = this.WhenAny(x => x.Red, x => x.Green, x => x.Blue,
@@ -58,7 +59,8 @@ namespace SerialCommunication {
                 .Throttle(TimeSpan.FromSeconds(0.3), RxApp.DeferredScheduler)
                 .ToProperty(this, x => x.FinalColor);
 
-            SaveColor = new ReactiveCommand();
+            SaveToLED = new ReactiveCommand();
+            SaveAll = new ReactiveCommand();
         }
 
         Color? intsToColor(Tuple<int, int, int> colorsAsInts) {
